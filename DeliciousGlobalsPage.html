@@ -10,8 +10,8 @@
 			var currentTabUrl = safari.application.activeBrowserWindow.activeTab.url;
 			var currentTabTitle = safari.application.activeBrowserWindow.activeTab.title;
 
-			var deliciousWindow = safari.application.openBrowserWindow();
-			deliciousWindow.activeTab.url = 'http://delicious.com/save?url='+currentTabUrl+'&title='+currentTabTitle;
+			var deliciousTab = safari.application.activeBrowserWindow.openTab();
+			deliciousTab.url = 'http://delicious.com/save?url='+currentTabUrl+'&title='+currentTabTitle;
 	    }
 	}
  

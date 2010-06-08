@@ -1,0 +1,30 @@
+<html>
+
+
+<script>
+	function performCommand(event) {
+
+	    if (event.command === "DeliciousToolbarItem") {
+
+			var currentTabUrl = safari.application.activeBrowserWindow.activeTab.url;
+			var currentTabTitle = safari.application.activeBrowserWindow.activeTab.title;
+
+			var deliciousWindow = safari.application.openBrowserWindow();
+			
+			deliciousWindow.activeTab.url = 'http://delicious.com/save?url='+currentTabUrl+'&title='+currentTabTitle;
+			
+	    }
+	}
+ 
+	function validateCommand(event) {
+	    if (event.command === "DeliciousToolbarItem") {
+	        // Disable the button if there is no URL loaded in the tab.
+	        event.target.disabled = !event.target.browserWindow.activeTab.url;
+	    }
+	}
+
+	safari.application.addEventListener("command", performCommand, false);
+	safari.application.addEventListener("validate", validateCommand, false);
+</script>
+
+</html>

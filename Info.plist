@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Jeveaux</string>
+	<key>CFBundleDisplayName</key>
+	<string>delicious</string>
+	<key>CFBundleIdentifier</key>
+	<string>br.com.giran.safari</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>DeliciousGlobalsPage.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>DeliciousToolbarItem</string>
+				<key>Identifier</key>
+				<string>DeliciousToolbarItem</string>
+				<key>Image</key>
+				<string>delicious_alpha.png</string>
+				<key>Label</key>
+				<string>Delicious</string>
+				<key>Palette Label</key>
+				<string></string>
+				<key>Tool Tip</key>
+				<string>Manage your delicious bookmarks</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+	</dict>
+	<key>Description</key>
+	<string>Save your bookmarks</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Level</key>
+			<string>None</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>http://www.jeveaux.com</string>
+</dict>
+</plist>

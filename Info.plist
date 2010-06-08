@@ -7,7 +7,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>delicious</string>
 	<key>CFBundleIdentifier</key>
-	<string>br.com.giran.safari</string>
+	<string>br.com.giran.safari.delicious</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -49,8 +49,10 @@
 	<dict>
 		<key>Website Access</key>
 		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
 			<key>Level</key>
-			<string>None</string>
+			<string>All</string>
 		</dict>
 	</dict>
 	<key>Website</key>

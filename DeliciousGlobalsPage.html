@@ -1,18 +1,17 @@
 <html>
 
+<head>
+</head>
 
 <script>
 	function performCommand(event) {
 
 	    if (event.command === "DeliciousToolbarItem") {
-
 			var currentTabUrl = safari.application.activeBrowserWindow.activeTab.url;
 			var currentTabTitle = safari.application.activeBrowserWindow.activeTab.title;
 
 			var deliciousWindow = safari.application.openBrowserWindow();
-			
 			deliciousWindow.activeTab.url = 'http://delicious.com/save?url='+currentTabUrl+'&title='+currentTabTitle;
-			
 	    }
 	}
  
@@ -23,6 +22,7 @@
 	    }
 	}
 
+	
 	safari.application.addEventListener("command", performCommand, false);
 	safari.application.addEventListener("validate", validateCommand, false);
 </script>

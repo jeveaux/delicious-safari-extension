@@ -26,7 +26,7 @@
 				<key>Identifier</key>
 				<string>DeliciousToolbarItem</string>
 				<key>Image</key>
-				<string>delicious_alpha.png</string>
+				<string>delicious.png</string>
 				<key>Label</key>
 				<string>Delicious</string>
 				<key>Palette Label</key>

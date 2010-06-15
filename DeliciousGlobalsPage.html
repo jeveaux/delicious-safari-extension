@@ -7,8 +7,8 @@
 	function performCommand(event) {
 
 	    if (event.command === "DeliciousToolbarItem") {
-			var currentTabUrl = safari.application.activeBrowserWindow.activeTab.url;
-			var currentTabTitle = safari.application.activeBrowserWindow.activeTab.title;
+			var currentTabUrl = encodeURIComponent(safari.application.activeBrowserWindow.activeTab.url);
+			var currentTabTitle = encodeURIComponent(safari.application.activeBrowserWindow.activeTab.title);
 
 			var deliciousTab = safari.application.activeBrowserWindow.openTab();
 			deliciousTab.url = 'http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+currentTabUrl+'&title='+currentTabTitle;

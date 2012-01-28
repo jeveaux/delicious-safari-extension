@@ -5,15 +5,23 @@
 
 <script>
 	function performCommand(event) {
-
 	    if (event.command === "DeliciousToolbarItem") {
-			var currentTabUrl = encodeURIComponent(safari.application.activeBrowserWindow.activeTab.url);
-			var currentTabTitle = encodeURIComponent(safari.application.activeBrowserWindow.activeTab.title);
+	    	var currentWindow = safari.application.activeBrowserWindow;
+	    	var currentTab = currentWindow.activeTab;
+			var currentTabUrl = encodeURIComponent(currentTab.url);
+			var currentTabTitle = encodeURIComponent(currentTab.title);
 
-			var deliciousTab = safari.application.activeBrowserWindow.openTab();
-			deliciousTab.url = 'http://delicious.com/save?v=5&noui&jump=close&url='+currentTabUrl+'&title='+currentTabTitle;
+			var deliciousTab = currentWindow.openTab();
+			deliciousTab.url = 'https://www.delicious.com/save?url=' + currentTabUrl + '&title=' + currentTabTitle;
 
-	    }
+			deliciousTab.addEventListener("beforeNavigate", function(event) {
+			// Close tab when bookmark saved or aborted and return user to original tab
+				if (!event.url.match('delicious.com/save|delicious.com/login')) {
+					currentTab.activate();
+					deliciousTab.close();
+				}
+			});
+		}
 	}
  
 	function validateCommand(event) {
@@ -23,7 +31,6 @@
 	    }
 	}
 
-	
 	safari.application.addEventListener("command", performCommand, false);
 	safari.application.addEventListener("validate", validateCommand, false);
 </script>
